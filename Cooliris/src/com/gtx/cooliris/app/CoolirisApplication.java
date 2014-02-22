@@ -1,11 +1,3 @@
-/*
- * System: Pascal
- * @version     1.00
- * 
- * Copyright (C) 2012, TOSHIBA Corporation.
- * 
- */
-
 package com.gtx.cooliris.app;
 
 import android.app.Activity;
