@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <!-- Used in View/Spinner1.java -->
+    <string-array name="groupby">
+        <item>美女</item>
+        <item>喜欢</item>
+        <!-- <item>本地</item> -->
+        <!-- <item>时间</item> -->
+    </string-array>
+
+    <string-array name="category">
+        <item>全部</item>
+        <item>插画</item>
+        <item>摄影</item>
+        <item>生活</item>
+        <item>灵感</item>
+        <item>设计</item>
+        <item>下载</item>
+        <item>教程</item>
+        <item>原创</item>
+        <item>我的收藏</item>
+    </string-array>
+    
+    <string-array name="pref_data_source_entries_list">
+        <item>本地</item>
+        <item>喜欢</item>
+    </string-array>
+    
+    <string-array name="pref_slideshow_mode_entries_list">
+        <item>顺序播放</item>
+        <item>随机播放</item>
+    </string-array>
+    
+    <string-array name="pref_switch_effect_entries_list">
+        <item>默认效果</item>
+        <item>缩小效果</item>
+        <item>深度效果</item>
+    </string-array>       
+</resources>

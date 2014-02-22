@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical" >
+    
+    <RelativeLayout         android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+            
+        <TextView
+            android:id="@+id/memory_cache_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/preference_set_memory_cache_size" />
+        
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="60dp" 
+            android:layout_below="@id/memory_cache_title"
+            android:layout_marginTop="10dp" >
+            <!-- android:layout_marginBottom="10dp"> -->
+                
+            <TextView
+                android:id="@+id/size_unit"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/memory_cache_title"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="@string/preference_cache_size_unit" />
+
+            <TextView
+                android:id="@+id/memory_size"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/size_unit"
+                android:layout_marginRight="5dp"
+                android:text="200" />            
+                
+            <SeekBar
+                android:id="@+id/memory_cache_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/memory_cache_title"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/memory_size"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp" />
+
+            </RelativeLayout>
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+            
+        <TextView
+            android:id="@+id/file_cache_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/preference_set_file_cache_size" />
+        
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="60dp" 
+            android:layout_below="@id/file_cache_title"
+            android:layout_marginTop="10dp" >
+            <!-- android:layout_marginBottom="10dp"> -->
+                
+            <TextView
+                android:id="@+id/size_unit_1"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/file_cache_title"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="@string/preference_cache_size_unit" />
+
+            <TextView
+                android:id="@+id/file_size"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/size_unit_1"
+                android:layout_marginRight="5dp"
+                android:text="200" />            
+                
+            <SeekBar
+                android:id="@+id/file_cache_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/file_cache_title"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/file_size"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp" />
+
+            </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

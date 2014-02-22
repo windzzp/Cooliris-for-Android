@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+
+    <string name="app_name">创意美图</string>
+    <!-- <string name="app_description">\t本软件所有图片及内容均来自互联网，版权归原作者所有。仅供学习和娱乐使用。如果不小心侵犯了您的权益，请联系我。如果您是开发者，对程序中的一些技术感兴趣，也可以联系我，欢迎交流与骚扰。</string> -->
+    <string name="app_description">\t本软件所有图片及内容均来自互联网，版权归原作者所有。仅供学习和娱乐使用。如果不小心侵犯了您的权益，请联系我。</string>
+    <string name="app_connect">联系我\nEmail: woyaowenzi@gmail.com\nQQ: 183808661</string>
+    <string name="app_version">软件版本：</string>
+    <string name="default_app_version_code">V0.9.1</string>
+        
+    <!-- Menu -->
+    <string name="menu_settings">设置</string>
+    <string name="menu_clearcache">清除缓存</string>
+    <string name="menu_previous">上一组</string>
+    <string name="menu_next">下一组</string>
+    <string name="menu_favorite">添加到收藏</string>
+    <string name="menu_to_top">回顶部</string>
+    <string name="menu_to_bottom">回底部</string>
+    <string name="menu_slideshow">幻灯片播放</string>
+	<string name="menu_download">图片下载</string>
+    <string name="menu_download_single_image">下载单张图片</string>
+    <string name="menu_download_group_images">下载单个图集</string>
+    <string name="menu_image_rotate_left">向左旋转</string>
+    <string name="menu_image_rotate_right">向右旋转</string>
+    <string name="menu_share_with">分享</string>
+    <string name="menu_set_wallpaper">设置成壁纸</string>
+    
+    <!-- Preference -->
+    <string name="preference_title">设置</string>
+    <string name="preference_category_cache">缓存</string>
+    <string name="preference_clear_cache">清除缓存</string>
+    <string name="preference_current_cache_size">当前缓存大小：</string>
+    <string name="preference_calculating_cache_size">正在计算&#8230;</string>
+    <string name="preference_clear_cache_summary">清除内存/文件缓存后，您需要重新下载所有图片</string>
+    <string name="preference_cache_size">缓存大小</string>
+    <string name="preference_cache_size_summary">您可以根据手机性能，设置内存和文件缓存大小。合适设置可以有效的提高程序流畅度</string>
+    <string name="preference_set_memory_cache_size">内存缓存大小</string>
+    <string name="preference_set_file_cache_size">文件缓存大小</string>
+    <string name="preference_category_ui">界面</string>
+    <string name="preference_ui_show_title_description">标题和描述</string>
+    <string name="preference_ui_show">显示</string>
+    <string name="preference_ui_hide">隐藏</string>
+    <string name="preference_ui_hide_desc">隐藏（隐藏主界面标题可以使滑动更加流畅）</string>
+    <string name="preference_category_effect">效果</string>
+    <string name="preference_switch_effect">切换效果</string>
+    <string name="preference_category_slideshow">幻灯片</string>
+    <string name="preference_slideshow_interval">切换时间</string>
+    <string name="preference_slideshow_effect">切换效果</string>
+    <string name="preference_slideshow_data_source">数据源</string>
+    <string name="preference_slideshow_mode">播放模式</string>
+    <string name="preference_category_image_download">下载</string>
+    <string name="preference_select_image_download_dir">图片存储位置</string>
+    <string name="preference_category_about">关于</string>
+    <string name="preference_about_disclaimer">免责声明</string>
+    <string name="preference_feedback">意见反馈</string>
+    
+    <!-- Preference Dialog-->
+    <string name="preference_cache_size_unit">M</string>
+    <string name="preference_switch_effect_default">默认效果</string>    
+    <string name="preference_slideshow_interval_subtitle">设置幻灯片切换时间</string>
+    <string name="preference_slideshow_interval_unit">秒</string>
+    <string name="preference_slideshow_mode_default">顺序播放</string>
+    <string name="preference_slideshow_data_source_default">本地</string>
+
+    <!-- Feedback -->
+    <string name="feedback_title">您的反馈是：</string>
+    <string name="feedback_bug_report">问题反馈</string>
+    <string name="feedback_improvement">改善意见</string>
+    <string name="feedback_others">其它问题</string>
+    <string name="feedback_contact">联系方式</string>
+    <string name="feedback_submit">提交</string>
+    
+    <string name="feedback_bug_report_default">感谢您在百忙之中反馈软件中出现的问题</string>
+    <string name="feedback_improvement_default">您的建议就是我继续工作的动力</string>
+    <string name="feedback_others_default">您有其它想说的&#8230;</string>
+    <string name="feedback_contact_default">您的联系方式（邮箱/QQ/电话/其它）</string>
+    <string name="toast_submit_no_content">填写内容不能为空</string>
+    <string name="toast_submit_succeed">提交成功，谢谢您的参与</string>
+    <string name="toast_submit_failed">很遗憾，提交失败</string>
+    <string name="msg_feedback_submitting">提交中，请稍候&#8230;</string>
+    
+    <!-- UI -->
+    <string name="loading">图片加载中&#8230;</string>
+    <string name="msg_no_more_images">没有更多的图片了</string>
+    <string name="toast_no_more_images">你看得太快啦，没有其它图片了</string>
+    <string name="toast_top_of_page">已到顶部了</string>
+    <string name="toast_bottom_of_page">已到底部了</string>
+    <string name="toast_clear_cache_started">开始清理缓存，请稍候&#8230;</string>
+    <string name="toast_clear_cache_completed">缓存已被清除</string>
+    <string name="toast_no_network_connection_toast">网络不给力</string>
+    <string name="toast_loading_data">数据加载中&#8230;</string>
+    <string name="toast_set_wallpaper">设置壁纸成功</string>
+    <string name="toast_add_to_favorite">添加到收藏</string>
+    <string name="toast_remove_from_favorite">取消收藏</string>
+    <string name="toast_download_single_image">下载单张图片成功</string>
+    <string name="toast_download_group_images">下载单个图集成功</string>
+    <string name="toast_download_image_error">下载失败</string>
+    <string name="toast_no_wifi">您使用的是2/3G网络，建议您在Wifi模式下使用。</string>
+    <string name="toast_entry_slideshow_mode">进入幻灯片模式，触摸屏幕停止</string>
+    <string name="toast_exit_slideshow_mode">退出幻灯片模式</string>
+    <string name="toast_exit_application">再按一次返回键退出应用程序</string>
+    <string name="toast_no_appropriate_app_to_open_path">没有适合的程序打开该位置</string>
+    <string name="msg_next_image_group">下一图集</string>
+    <string name="msg_previous_image_group">上一图集</string>
+    
+    <!-- AD -->
+    <string name="sponsor_tip">骚年，点点广告，赞一下呗，赞一下又不会怀孕。</string>
+</resources>

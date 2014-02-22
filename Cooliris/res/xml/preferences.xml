@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sidebar_pref="http://schemas.android.com/apk/res/com.gtx.cooliris"
+    xmlns:robobunny="http://robobunny.com"
+    xmlns:android_ex="http://android_ex.com">
+    
+    <!-- xmlns:sidebar_pref="http://schemas.android.com/apk/res/com.gtx.cooliris.widget.sidebar_pref" -->
+    
+    <!-- Preference Category: Cache -->
+    <PreferenceCategory android:title="@string/preference_category_cache" >    
+        <Preference
+            android:key="pref_key_clear_cache"
+            android:title="@string/preference_clear_cache"
+            android:summary="@string/preference_clear_cache_summary" /> 
+         
+         <!-- TODO: In next version           
+         <com.gtx.cooliris.widget.SeekBarPreference
+            android:key="pref_key_set_cache_size"
+            android:title="@string/preference_cache_size"
+            android:summary="@string/preference_cache_size_summary" />
+          -->
+         <!-- 
+         <com.gtx.cooliris.widget.SeekBarPreference2
+            android:key="pref_key_set_cache_size"
+            android:title="@string/preference_cache_size"
+            android:summary="@string/preference_cache_size_summary"
+            android:defaultValue="5"
+            android:max="15"
+            sidebar_pref:subtitle="@string/preference_set_memory_cache_size"
+            sidebar_pref:min="3"
+            sidebar_pref:unit="@string/preference_cache_size_unit" /> -->
+		
+		<!--         
+		<Preference
+            android:key="pref_key_cache_size"
+            android:title="@string/preference_cache_size"
+            android:summary="@string/preference_cache_size_summary" /> -->
+    </PreferenceCategory>
+    
+    <!-- Preference Category: Download -->
+    <PreferenceCategory android:title="@string/preference_category_image_download" >
+        <Preference
+            android:key="pref_key_download_path"
+            android:title="@string/preference_select_image_download_dir" />
+    </PreferenceCategory>
+        
+    <!-- Preference Category: UI -->
+    <PreferenceCategory android:title="@string/preference_category_ui">
+        <SwitchPreference
+            android:key="pref_key_show_title_description"
+            android:title="@string/preference_ui_show_title_description"
+            android:switchTextOn="@string/preference_ui_show"
+            android:switchTextOff="@string/preference_ui_hide"
+            android:defaultValue="@string/preference_ui_show" />
+        
+    </PreferenceCategory>
+    
+    <!-- Preference Category: Switch effect -->
+    <PreferenceCategory android:title="@string/preference_category_effect" android:key="preference_category_effect">        
+         <ListPreference
+            android:key="pref_key_switch_effect"
+            android:title="@string/preference_switch_effect"
+            android:summary=""
+            android:entries="@array/pref_switch_effect_entries_list"
+            android:entryValues="@array/pref_switch_effect_entries_list"
+            android:dialogTitle="@string/preference_switch_effect"
+            android:dialogIcon="@drawable/ic_slideshow_mode"
+            android:defaultValue="@string/preference_switch_effect_default" />
+    </PreferenceCategory>
+    
+    <!-- Preference Category: Slide Show -->
+    <PreferenceCategory android:title="@string/preference_category_slideshow" android:key="preference_category_slideshow">
+         <!-- <Preference
+            android:key="pref_key_slideshow_interval"
+            android:title="@string/preference_slideshow_interval" /> -->
+         
+         <com.gtx.cooliris.widget.SeekBarPreference2
+            android:key="pref_key_slideshow_interval"
+            android:title="@string/preference_slideshow_interval"
+            android:defaultValue="5"
+            android:max="15"
+            sidebar_pref:subtitle="@string/preference_slideshow_interval_subtitle"
+            sidebar_pref:min="3"
+            sidebar_pref:unit="@string/preference_slideshow_interval_unit" />
+         
+         <!-- TODO: In next version
+         <ListPreference
+            android:key="pref_key_slideshow_effect"
+            android:title="@string/preference_slideshow_effect"
+            android:summary=""
+            android:entries="@array/pref_slideshow_effect_entries_list"
+            android:entryValues="@array/pref_slideshow_effect_entries_list"
+            android:dialogTitle="@string/preference_slideshow_effect"
+            android:dialogIcon="@drawable/ic_slideshow_mode"
+            android:defaultValue="@string/preference_slideshow_effect_default" />             
+         
+         <ListPreference
+            android:key="pref_key_slideshow_mode"
+            android:title="@string/preference_slideshow_mode"
+            android:summary=""
+            android:entries="@array/pref_slideshow_mode_entries_list"
+            android:entryValues="@array/pref_slideshow_mode_entries_list"
+            android:dialogTitle="@string/preference_slideshow_mode"
+            android:dialogIcon="@drawable/ic_slideshow_mode"
+            android:defaultValue="@string/preference_slideshow_mode_default" />
+          -->
+          
+         <!-- 
+         <ListPreference
+            android:key="pref_key_data_source"
+            android:title="@string/preference_slideshow_data_source"
+            android:summary=""
+            android:entries="@array/pref_data_source_entries_list"
+            android:entryValues="@array/pref_data_source_entries_list"
+            android:dialogTitle="@string/preference_slideshow_data_source"
+            android:dialogIcon="@drawable/ic_data_source"
+            android:defaultValue="@string/preference_slideshow_data_source_default" />     --> 
+    </PreferenceCategory>
+    
+    <!-- Preference Category: About -->
+    <PreferenceCategory 
+        android:title="@string/preference_category_about" 
+        android:key="preference_category_about">
+        
+        <Preference
+            android:key="pref_key_about_feedback"
+            android:title="@string/preference_feedback" /> 
+                    
+        <Preference
+            android:key="pref_key_about_disclaimer"
+            android:title="@string/preference_about_disclaimer" />
+    </PreferenceCategory>    
+        
+</PreferenceScreen>
+

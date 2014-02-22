@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+
+    <string name="app_name">Cooliris</string>
+    <!-- <string name="app_description">\tAll the pictures and contents of the software are come form network. It just only use for study and entertainment. Please contact me if violated your rights. If you are a developer, you can also contact me if you are interested the tech points in this software.</string> -->
+    <string name="app_description">\tAll the pictures and contents of the software are come form network, copyrighted by their respective copyright owners. It only use for study and entertainment. Please contact me if violated your rights.</string>
+    <string name="app_connect">Contact us\nEmail: woyaowenzi@gmail.com\nQQ:     183808661</string>
+	<string name="app_version">Software Version: </string>
+    <string name="default_app_version_code">V0.9.1</string>
+    
+    <!-- Menu -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_clearcache">Clear Cache</string>
+    <string name="menu_previous">Previous</string>
+    <string name="menu_next">Next</string>
+    <string name="menu_favorite">Add Favorite</string>
+    <string name="menu_to_top">To Top</string>
+    <string name="menu_to_bottom">To Bottom</string>
+    <string name="menu_slideshow">Slide Show</string>
+    <string name="menu_download">Download</string>
+    <string name="menu_download_single_image">Download single image</string>
+    <string name="menu_download_group_images">Download group images</string>
+    <string name="menu_image_rotate_left">Rotate Left</string>
+    <string name="menu_image_rotate_right">Rotate Right</string>
+    <string name="menu_share_with">Share with</string>
+    <string name="menu_set_wallpaper">Set Wallpaper</string>
+    
+    <!-- Preference -->
+    <string name="preference_title">Settings</string>
+    <string name="preference_category_cache">Cache</string>
+    <string name="preference_clear_cache">Clear Cache</string>
+    <string name="preference_current_cache_size">Current Cache Size: </string>
+    <string name="preference_calculating_cache_size">Calculating&#8230;</string>
+    <string name="preference_clear_cache_summary">After clear the memory / file cache, you need to re-download the images</string>
+    <string name="preference_cache_size">Cache Size</string>
+    <string name="preference_cache_size_summary">You can set the memory / file cache size according to you mobile phone\'s performance. Appropriate setting can effectively improve the fluency of the application.</string>
+    <string name="preference_set_memory_cache_size">Memory Cache Size</string>
+    <string name="preference_set_file_cache_size">File Cache Size</string>
+    <string name="preference_category_ui">UI</string>
+    <string name="preference_ui_show_title_description">Description</string>
+    <string name="preference_ui_show">Show</string>
+    <string name="preference_ui_hide">Hide</string>
+    <string name="preference_ui_hide_desc">Hide (Hide description will make scroll smoothly in main UI)</string>
+	<string name="preference_category_effect">Effect</string>
+    <string name="preference_switch_effect">Switch Effect</string>
+    <string name="preference_category_slideshow">Slide Show</string>
+    <string name="preference_slideshow_interval">Slideshow Interval</string>
+    <string name="preference_slideshow_effect">Slideshow Effect</string>
+    <string name="preference_slideshow_data_source">Data Source</string>    
+    <string name="preference_slideshow_mode">Slideshow Mode</string>
+    <string name="preference_category_image_download">Download</string>
+    <string name="preference_select_image_download_dir">HD Images Storage Path</string>
+    <string name="preference_category_about">About</string>
+    <string name="preference_about_disclaimer">Disclaimer</string>
+    <string name="preference_feedback">Feedback</string>
+    
+    <!-- Preference Dialog-->
+    <string name="preference_cache_size_unit">M</string>
+    <string name="preference_switch_effect_default">Default Effect</string>
+    <string name="preference_slideshow_interval_subtitle">Set slide show interval time</string>
+    <string name="preference_slideshow_interval_unit">Sec</string>
+    <string name="preference_slideshow_mode_default">Order play</string>
+    <string name="preference_slideshow_data_source_default">Locations</string>
+    <!-- Feedback -->
+    <string name="feedback_title">Your feedback is:</string>
+    <string name="feedback_bug_report">Bug</string>
+    <string name="feedback_improvement">Improvement</string>
+    <string name="feedback_others">Others</string>
+    <string name="feedback_contact">Contact way</string>
+    <string name="feedback_submit">Submit</string>
+    
+    <string name="feedback_bug_report_default">Thank you very much for reporting bugs</string>
+    <string name="feedback_improvement_default">Your suggestion is my power to work</string>
+    <string name="feedback_others_default">You want to say other problem&#8230;</string>
+    <string name="feedback_contact_default">Your contact way: (Email/MSN/TEL/Other)</string>
+    <string name="toast_submit_no_content">The content cannot be empty</string>
+    <string name="toast_submit_succeed">Submit success, thank you for your participation</string>
+    <string name="toast_submit_failed">Ooops! Submit failed</string>
+    <string name="msg_feedback_submitting">Submitting, please waiting&#8230;</string>
+    
+    <!-- UI -->
+    <string name="loading">loading&#8230;</string>
+    <string name="msg_no_more_images">No more images</string>
+    <string name="toast_no_more_images">No more images&#8230;</string>
+    <string name="toast_top_of_page">Have been the top of the page&#8230;</string>
+    <string name="toast_bottom_of_page">Have been the bottom of the page&#8230;</string>
+    <string name="toast_clear_cache_started">Begin to clear cache, please wait&#8230;</string>
+    <string name="toast_clear_cache_completed">Caches have been cleared</string>
+    <string name="toast_no_network_connection_toast">No network connection found</string>
+    <string name="toast_loading_data">Please wait&#8230;</string>
+    <string name="toast_set_wallpaper">Set wallpaper success.</string>
+    <string name="toast_add_to_favorite">Add to favorite</string>
+    <string name="toast_remove_from_favorite">Remove from favorite</string>
+	<string name="toast_no_wifi">You use the 2/3G network, it\'ll consume much more network flux.</string>
+    <string name="toast_entry_slideshow_mode">Entry slideshow mode, tap to stop</string>
+    <string name="toast_exit_slideshow_mode">Exit slideshow mode</string>
+    <string name="toast_exit_application">Press back menu again to exit</string>
+    <string name="toast_no_appropriate_app_to_open_path">No appropriate application to open this path</string>
+    <string name="msg_next_image_group">Next Photos</string>
+    <string name="msg_previous_image_group">Previous Photos</string>
+    
+    <!-- AD -->
+    <string name="sponsor_tip">Tap the advertisement to support our development.</string>    
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item
+        android:id="@+id/menu_favorite"
+        android:icon="@drawable/ic_rating_not_important" 
+        android:title="@string/menu_favorite"
+        android:showAsAction="ifRoom" />
+        <!-- android:showAsAction="ifRoom|withText" /> -->
+        
+    <item
+        android:id="@+id/menu_previous"
+        android:icon="@drawable/ic_navigation_previous_group" 
+        android:title="@string/menu_previous"
+        android:showAsAction="ifRoom" />
+        <!-- android:showAsAction="ifRoom|withText" /> -->
+
+	<item
+        android:id="@+id/menu_next"
+        android:icon="@drawable/ic_navigation_next_group" 
+        android:title="@string/menu_next"
+        android:showAsAction="ifRoom" />
+        <!-- android:showAsAction="ifRoom|withText" /> -->
+        
+	<item
+        android:id="@+id/menu_slideshow"
+        android:icon="@drawable/ic_slideshow" 
+        android:title="@string/menu_slideshow"
+        android:showAsAction="ifRoom" />
+        <!-- android:showAsAction="ifRoom|withText" /> -->        
+        
+    <item android:id="@+id/menu_set_wallpaper"
+        android:icon="@drawable/ic_set_wallpaper"
+        android:title="@string/menu_set_wallpaper"
+        android:showAsAction="ifRoom" />
+        
+    <item android:id="@+id/menu_download"
+        android:icon="@drawable/ic_download"
+        android:title="@string/menu_download"
+        android:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@+id/menu_download_single_image"
+                  android:title="@string/menu_download_single_image" />
+            <item android:id="@+id/menu_download_group_images"
+                  android:title="@string/menu_download_group_images" />
+        </menu>
+        <!-- android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically" -->
+    </item>
+
+    <item
+        android:id="@+id/menu_rotate_left"
+        android:icon="@drawable/ic_images_rotate_left" 
+        android:title="@string/menu_image_rotate_left"
+        android:showAsAction="ifRoom" />
+    
+    <item
+        android:id="@+id/menu_rotate_right"
+        android:icon="@drawable/ic_images_rotate_right" 
+        android:title="@string/menu_image_rotate_right"
+        android:showAsAction="ifRoom" />    
+    
+    <item android:id="@+id/menu_share_with"
+          android:title="@string/menu_share_with"
+          android:showAsAction="ifRoom"
+          android:actionProviderClass="android.widget.ShareActionProvider" />
+
+	<item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_action_settings"
+        android:title="@string/menu_settings"
+        android:showAsAction="never" />
+
+<!-- 	<item
+        android:id="@+id/clear_cache"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:showAsAction="never"
+        android:title="@string/clear_cache_menu"/> -->
+</menu>

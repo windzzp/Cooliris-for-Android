@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- NOTE: -->
+<!-- The ?android:attr/dropdownListPreferredItemHeight is not public, so we use 48dp
+	 This value is defined in android-sdk\platforms\android-17\data\res\values\themes.xml
+	 The following is the attr  -->
+<!--
+		<item name="listPreferredItemHeight">64dip</item>
+        <item name="listPreferredItemHeightSmall">48dip</item>
+        <item name="listPreferredItemHeightLarge">80dip</item>
+        <item name="dropdownListPreferredItemHeight">?android:attr/listPreferredItemHeightSmall</item>
+-->
+
+<!-- <CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/dropdownListPreferredItemHeight"
+    android:textSize="18sp"
+    style="?android:attr/spinnerDropDownItemStyle"
+    android:singleLine="true"
+    android:ellipsize="marquee" >
+</CheckedTextView>  -->
+
+<!-- <CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerDropDownItemStyle"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:ellipsize="marquee"
+    android:textSize="18sp" /> -->
+
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerDropDownItemStyle"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:ellipsize="marquee"
+    android:textSize="18sp" />

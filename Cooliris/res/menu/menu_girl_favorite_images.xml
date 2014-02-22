@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/menu_favorite"
+        android:icon="@drawable/ic_rating_not_important" 
+        android:title="@string/menu_favorite"
+        android:showAsAction="ifRoom" />
+        <!-- android:showAsAction="ifRoom|withText" /> -->
+
+	<item
+        android:id="@+id/menu_slideshow"
+        android:icon="@drawable/ic_slideshow" 
+        android:title="@string/menu_slideshow"
+        android:showAsAction="ifRoom" />
+        <!-- android:showAsAction="ifRoom|withText" /> -->
+        
+	<item
+        android:id="@+id/menu_set_wallpaper"
+        android:icon="@drawable/ic_set_wallpaper"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_set_wallpaper"/>
+        
+    <item
+        android:id="@+id/menu_rotate_left"
+        android:icon="@drawable/ic_images_rotate_left" 
+        android:title="@string/menu_image_rotate_left"
+        android:showAsAction="always" />
+    
+    <item
+        android:id="@+id/menu_rotate_right"
+        android:icon="@drawable/ic_images_rotate_right" 
+        android:title="@string/menu_image_rotate_right"
+        android:showAsAction="always" />    
+        
+    <item android:id="@+id/menu_share_with"
+          android:title="@string/menu_share_with"
+          android:showAsAction="never"
+          android:actionProviderClass="android.widget.ShareActionProvider" />
+    
+	<item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_action_settings"
+        android:title="@string/menu_settings"
+        android:showAsAction="never" />
+</menu>
