@@ -13,21 +13,17 @@ import android.util.Log;
 
 import com.gtx.cooliris.environment.NetworkEnvironment;
 
-public class DataFetcher
-{
+public class DataFetcher {
     private static DataFetcher s_instance = new DataFetcher();
-    
-    public static DataFetcher getInstance()
-    {
+
+    public static DataFetcher getInstance() {
         return s_instance;
     }
-    
-    public String getGirlsListXML()
-    {
+
+    public String getGirlsListXML() {
         HttpURLConnection conn = null;
         InputStream is = null;
-        try
-        {
+        try {
             URL url = new URL(NetworkEnvironment.REQUEST_TYPE_GIRL_LIST);
             conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(NetworkEnvironment.CONNECT_TIMEOUT);
@@ -39,8 +35,7 @@ public class DataFetcher
             int responseCode = conn.getResponseCode();
             Log.d("Girls", "Response code: " + responseCode);
 
-            if (responseCode == HttpStatus.SC_OK)
-            {
+            if (responseCode == HttpStatus.SC_OK) {
                 is = conn.getInputStream();
                 int len = conn.getContentLength();
                 String encoding = conn.getContentEncoding();
@@ -52,25 +47,15 @@ public class DataFetcher
             }
 
             conn.disconnect();
-        }
-        catch (MalformedURLException e)
-        {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally
-        {
-            if (is != null)
-            {
-                try
-                {
+        } finally {
+            if (is != null) {
+                try {
                     is.close();
-                }
-                catch (IOException e)
-                {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -82,32 +67,29 @@ public class DataFetcher
 
         return "";
     }
-    
-    public String getGirlImagesXML(int girlId)
-    {
+
+    public String getGirlImagesXML(int girlId) {
         HttpURLConnection conn = null;
         InputStream is = null;
-        try
-        {
+        try {
             URL url = new URL(NetworkEnvironment.REQUEST_TYPE_GIRL_LIST);
             conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(NetworkEnvironment.CONNECT_TIMEOUT);
             conn.setReadTimeout(NetworkEnvironment.SOCKET_TIMEOUT);
             conn.setRequestMethod("GET");
             conn.setDoInput(true);
-            
+
             conn.addRequestProperty("RequestCode", "GetGirlImage");
             conn.addRequestProperty("girl_id", Integer.toString(girlId));
-            
-//            conn.setRequestMethod("setRequestMethod");
-//            conn.setRequestProperty("ka", "va");
+
+            // conn.setRequestMethod("setRequestMethod");
+            // conn.setRequestProperty("ka", "va");
 
             conn.connect();
             int responseCode = conn.getResponseCode();
             Log.d("Girls", "Response code: " + responseCode);
 
-            if (responseCode == HttpStatus.SC_OK)
-            {
+            if (responseCode == HttpStatus.SC_OK) {
                 is = conn.getInputStream();
                 int len = conn.getContentLength();
                 String encoding = conn.getContentEncoding();
@@ -119,25 +101,15 @@ public class DataFetcher
             }
 
             conn.disconnect();
-        }
-        catch (MalformedURLException e)
-        {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally
-        {
-            if (is != null)
-            {
-                try
-                {
+        } finally {
+            if (is != null) {
+                try {
                     is.close();
-                }
-                catch (IOException e)
-                {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
@@ -150,39 +122,28 @@ public class DataFetcher
         return "";
     }
 
-    public String readStream(InputStream is, int contentLength, String encoding)
-    {
-        if (null == is)
-        {
+    public String readStream(InputStream is, int contentLength, String encoding) {
+        if (null == is) {
             return "";
         }
-        
+
         final int bufferSize = 1024 * 8;
         ByteArrayOutputStream baos = new ByteArrayOutputStream(contentLength);
-        try
-        {
+        try {
             byte[] buffer = new byte[bufferSize];
             int len = -1;
-            while (-1 != (len = is.read(buffer)))
-            {
+            while (-1 != (len = is.read(buffer))) {
                 baos.write(buffer, 0, len);
             }
-            
-            return new String(baos.toByteArray(), encoding);            
-        }
-        catch (IOException e)
-        {
+
+            return new String(baos.toByteArray(), encoding);
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally
-        {
-            try
-            {
+        } finally {
+            try {
                 baos.close();
                 is.close();
-            }
-            catch (IOException e)
-            {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

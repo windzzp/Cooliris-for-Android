@@ -14,80 +14,65 @@ import com.gtx.cooliris.utils.FileUtils;
 /**
  * This class is used to manage the resource of server information.
  */
-public class ResourceManager
-{
-    /**
-     * TAG
-     */
-    public static final String TAG  = "ResourceManager";
-    
+public class ResourceManager {
+    public static final String TAG = "ResourceManager";
+
     /**
      * The database file name in asset resource.
      */
-    //private static final String ASSETS_GIRLS_DB = "\\db\\girls.db";
-    //private static final String GIRLS_DB_NAME = "girls.db";
+    // private static final String ASSETS_GIRLS_DB = "\\db\\girls.db";
+    // private static final String GIRLS_DB_NAME = "girls.db";
     private static final String IMAGE_DB_NAME = "sudasuta.db";
-    
+
     /**
      * The database file folder in asset resource.
      */
     private static final String IMAGE_DB_DIR = "databases";
-    
+
     /**
      * Initialization.
      */
-    public static void initialize()
-    {
+    public static void initialize() {
         File imageDBFile = getDBFile();
-        if (null == imageDBFile || !imageDBFile.exists())
-        {
+        if (null == imageDBFile || !imageDBFile.exists()) {
             copyDBFile();
         }
     }
-    
-    public static boolean hasInitialized() 
-    {
+
+    public static boolean hasInitialized() {
         File imageDBFile = getDBFile();
         return (null != imageDBFile && imageDBFile.exists());
-	}
-    
-    public static void copyDBFile()
-    {
+    }
+
+    public static void copyDBFile() {
         Context context = CoolirisApplication.getAppContext();
-        
-        try
-        {
+
+        try {
             ApplicationInfo appInfo = context.getApplicationInfo();
             String dataDir = appInfo.dataDir;
             File dbDir = new File(dataDir, IMAGE_DB_DIR);
             // Make sure the databases folder exists.
-            if (!dbDir.exists())
-            {
+            if (!dbDir.exists()) {
                 dbDir.mkdirs();
             }
-            
+
             AssetManager assetManager = context.getAssets();
             File outFile = new File(dbDir, IMAGE_DB_NAME);
             InputStream is = assetManager.open(IMAGE_DB_DIR + "/" + IMAGE_DB_NAME);
             FileOutputStream os = new FileOutputStream(outFile);
             FileUtils.copyStream(is, os);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally
-        {
-            
+        } finally {
+
         }
     }
-    
-    public static File getDBFile()
-    {
+
+    public static File getDBFile() {
         Context context = CoolirisApplication.getAppContext();
         ApplicationInfo appInfo = context.getApplicationInfo();
         String dataDir = appInfo.dataDir + "/" + IMAGE_DB_DIR;
-        
+
         return new File(dataDir, IMAGE_DB_NAME);
     }
 }

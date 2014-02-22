@@ -1,6 +1,5 @@
 package com.gtx.cooliris.interfaces;
 
-public interface IIdleHandler
-{
+public interface IIdleHandler {
     void onIdle();
 }

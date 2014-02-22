@@ -8,14 +8,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * This class is used to create database for this application..
  */
-public class ImageDBHelper extends SQLiteOpenHelper
-{
+public class ImageDBHelper extends SQLiteOpenHelper {
     /**
      * The database name.
      */
-    //public final static String DATABASE_NAME = "girls.db";
+    // public final static String DATABASE_NAME = "girls.db";
     public final static String DATABASE_NAME = "sudasuta.db";
-    
+
     /**
      * The lock object for locking the lasy loading instance.
      */
@@ -24,13 +23,13 @@ public class ImageDBHelper extends SQLiteOpenHelper
     /**
      * The database version.
      */
-    public final static int DATABASE_VERSION        = 1;
+    public final static int DATABASE_VERSION = 1;
 
     /**
      * The instance of MelonpanDBHelper class.
      */
-    private static volatile ImageDBHelper m_pascalDBHelper  = null;
-    
+    private static volatile ImageDBHelper m_pascalDBHelper = null;
+
     /**
      * The database instance.
      */
@@ -39,24 +38,16 @@ public class ImageDBHelper extends SQLiteOpenHelper
     /**
      * Call this method to create a database helper instance.
      * 
-     * @param context
-     *            to use to open or create the database.
+     * @param context to use to open or create the database.
      * 
      * @return The instance of the MelonpanDBHelper class.
      */
-    public static ImageDBHelper getInstance(Context context)
-    {
-        synchronized (m_lasyLoadingLock) 
-        {
+    public static ImageDBHelper getInstance(Context context) {
+        synchronized (m_lasyLoadingLock) {
             // If the instance is null, allocate memory for it.
-            if (null == m_pascalDBHelper )
-            {
-                m_pascalDBHelper = new ImageDBHelper(
-                        context,
-                        DATABASE_NAME,
-                        null,
-                        DATABASE_VERSION);
-    
+            if (null == m_pascalDBHelper) {
+                m_pascalDBHelper = new ImageDBHelper(context, DATABASE_NAME, null, DATABASE_VERSION);
+
                 // This calling will lead to create a actually database.
                 m_pascalDBHelper.getWritableDatabase();
             }
@@ -65,35 +56,28 @@ public class ImageDBHelper extends SQLiteOpenHelper
     }
 
     /**
-     * Create a helper object to create, open, and/or manage a database. The
-     * database is not actually created or opened until one of
-     * {@link #getWritableDatabase} or {@link #getReadableDatabase} is called.
+     * Create a helper object to create, open, and/or manage a database. The database 
+     * is not actually created or opened until one of {@link #getWritableDatabase} or
+     * {@link #getReadableDatabase} is called.
      * 
-     * @param context
-     *            to use to open or create the database
-     * @param name
-     *            of the database file, or null for an in-memory database
-     * @param factory
-     *            to use for creating cursor objects, or null for the default
-     * @param version
-     *            number of the database (starting at 1); if the database is
-     *            older, {@link #onUpgrade} will be used to upgrade the database
+     * @param context to use to open or create the database
+     * @param name    of the database file, or null for an in-memory database
+     * @param factory to use for creating cursor objects, or null for the default
+     * @param version number of the database (starting at 1); if the database is older,
+     *            {@link #onUpgrade} will be used to upgrade the database
      */
-    private ImageDBHelper(Context context, String name, CursorFactory factory, int version)
-    {
+    private ImageDBHelper(Context context, String name, CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
     /**
      * Called when the database is created for the first time. This is where the
-     * creation of tables and the initial population of the tables should
-     * happen.
+     * creation of tables and the initial population of the tables should happen.
      * 
      * @param db The database.
      */
     @Override
-    public void onCreate(SQLiteDatabase db)
-    {
+    public void onCreate(SQLiteDatabase db) {
     }
 
     /**
@@ -109,30 +93,20 @@ public class ImageDBHelper extends SQLiteOpenHelper
      * then create the new table and then populate the new table with the
      * contents of the old table.
      * 
-     * @param db
-     *            The database.
-     * @param oldVersion
-     *            The old database version.
-     * @param newVersion
-     *            The new database version.
+     * @param db         The database.
+     * @param oldVersion The old database version.
+     * @param newVersion The new database version.
      */
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-    {
-        if (newVersion > oldVersion)
-        {
-            try
-            {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (newVersion > oldVersion) {
+            try {
                 db.beginTransaction();
-                /*db.execSQL("DROP TABLE IF EXISTS " + AudioExInfoDB.AUDIO_EX_TABLE_NAME);*/
+                /* db.execSQL("DROP TABLE IF EXISTS " + AudioExInfoDB.AUDIO_EX_TABLE_NAME); */
                 db.setTransactionSuccessful();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
-            }
-            finally
-            {
+            } finally {
                 db.endTransaction();
             }
         }
@@ -144,16 +118,13 @@ public class ImageDBHelper extends SQLiteOpenHelper
      * Called when the database has been opened. The implementation should check
      * {@link SQLiteDatabase#isReadOnly} before updating the database.
      * 
-     * @param db
-     *            The database.
+     * @param db The database.
      */
     @Override
-    public void onOpen(SQLiteDatabase db)
-    {
+    public void onOpen(SQLiteDatabase db) {
         super.onOpen(db);
 
-        if (db.isReadOnly())
-        {
+        if (db.isReadOnly()) {
             db.execSQL("PRAGMA foreign_keys = ON;");
             db.execSQL("PRAGMA default_cache_size = 10000;");
         }
@@ -166,13 +137,11 @@ public class ImageDBHelper extends SQLiteOpenHelper
      * called.
      */
     @Override
-    public synchronized SQLiteDatabase getWritableDatabase()
-    {
-        if (null == m_databaseInstance)
-        {
+    public synchronized SQLiteDatabase getWritableDatabase() {
+        if (null == m_databaseInstance) {
             m_databaseInstance = super.getWritableDatabase();
         }
-        
+
         return m_databaseInstance;
     }
     
@@ -186,10 +155,9 @@ public class ImageDBHelper extends SQLiteOpenHelper
      * in the future.
      */
     @Override
-    public synchronized SQLiteDatabase getReadableDatabase()
-    {
-        //return super.getReadableDatabase();
-        
+    public synchronized SQLiteDatabase getReadableDatabase() {
+        // return super.getReadableDatabase();
+
         // Always return the writable database.
         return getWritableDatabase();
     }
@@ -198,20 +166,17 @@ public class ImageDBHelper extends SQLiteOpenHelper
      * Close the database.
      */
     @Override
-    public synchronized void close()
-    {
+    public synchronized void close() {
         super.close();
-        
+
         final SQLiteDatabase db = m_databaseInstance;
-        
-        if (null != db)
-        {
-            if (db.isOpen())
-            {
+
+        if (null != db) {
+            if (db.isOpen()) {
                 db.close();
             }
         }
-        
+
         m_databaseInstance = null;
     }
 }

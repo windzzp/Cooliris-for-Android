@@ -13,26 +13,24 @@ import com.gtx.cooliris.R;
 import com.gtx.cooliris.constant.GAConstant;
 import com.gtx.cooliris.imagecache.Utils;
 
-public class AboutActivity extends Activity
-{
-	private TextView m_aboutApp = null;
-	private TextView m_appVersion = null;
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_about);
-		
-		EasyTracker.getTracker().sendView(GAConstant.SCREEN_SETTINGS_ABOUT);
-		
-		m_aboutApp = (TextView) findViewById(R.id.about_app);
-		m_appVersion = (TextView) findViewById(R.id.app_version);
-		
-		String appVer = getAppVersion();
-		String appVerPrefix = getString(R.string.app_version);
-		m_appVersion.setText(appVerPrefix + appVer);
-		
+public class AboutActivity extends Activity {
+    private TextView m_aboutApp = null;
+    private TextView m_appVersion = null;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_about);
+
+        EasyTracker.getTracker().sendView(GAConstant.SCREEN_SETTINGS_ABOUT);
+
+        m_aboutApp = (TextView) findViewById(R.id.about_app);
+        m_appVersion = (TextView) findViewById(R.id.app_version);
+
+        String appVer = getAppVersion();
+        String appVerPrefix = getString(R.string.app_version);
+        m_appVersion.setText(appVerPrefix + appVer);
+
         // Add a action bar on top
         if (Utils.hasHoneycomb()) {
             final ActionBar actionBar = getActionBar();
@@ -40,31 +38,25 @@ public class AboutActivity extends Activity
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(false);
         }
-	}
-	
-	private String getAppVersion()
-	{
-		try
-		{
-			PackageManager manager = getPackageManager();
-			PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
-			String version = info.versionName;
-			return "V" + version;
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			return getString(R.string.default_app_version_code);
-		}
-	}
-	
+    }
+
+    private String getAppVersion() {
+        try {
+            PackageManager manager = getPackageManager();
+            PackageInfo info = manager.getPackageInfo(getPackageName(), 0);
+            String version = info.versionName;
+            return "V" + version;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return getString(R.string.default_app_version_code);
+        }
+    }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
         case android.R.id.home:
-        	//NavUtils.navigateUpFromSameTask(this);
+            // NavUtils.navigateUpFromSameTask(this);
             finish();
             return true;
 
@@ -72,12 +64,11 @@ public class AboutActivity extends Activity
             break;
         }
         return super.onOptionsItemSelected(item);
-    }	
-	
-	@Override
-	public void finish()
-	{
-		super.finish();
-		overridePendingTransition(R.anim.no_anim, R.anim.exit_anim);
-	}
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.no_anim, R.anim.exit_anim);
+    }
 }

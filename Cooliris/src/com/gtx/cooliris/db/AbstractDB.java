@@ -10,83 +10,70 @@ import com.gtx.cooliris.app.CoolirisApplication;
 /**
  * This class defines the abstract database processing.
  */
-public class AbstractDB
-{
+public class AbstractDB {
     /**
-     * The MelonpanDBHelper instance. 
+     * The MelonpanDBHelper instance.
      */
-    private ImageDBHelper m_dbHelper    = null;
-    
+    private ImageDBHelper m_dbHelper = null;
+
     /**
      * The constructor method.
      * 
      * @param context The context object.
      */
-    public AbstractDB()
-    {
+    public AbstractDB() {
         Context context = CoolirisApplication.getAppContext();
-        if (null != context)
-        {
+        if (null != context) {
             m_dbHelper = ImageDBHelper.getInstance(context);
         }
     }
-    
+
     /**
-     *  Create and/or open a database that will be used for reading and writing.
-     *  
+     * Create and/or open a database that will be used for reading and writing.
+     * 
      * @return a read/write database object valid until {@link #close} is called.
      */
-    public synchronized SQLiteDatabase getWritableDatabase()
-    {
+    public synchronized SQLiteDatabase getWritableDatabase() {
         return (null != m_dbHelper) ? m_dbHelper.getWritableDatabase() : null;
     }
-    
+
     /**
      * Create and/or open a database.
      * 
-     * @return a database object valid until {@link #getWritableDatabase}
-     *     or {@link #close} is called.
+     * @return a database object valid until {@link #getWritableDatabase} or {@link #close} is
+     *         called.
      */
-    public synchronized SQLiteDatabase getReadableDatabase()
-    {
+    public synchronized SQLiteDatabase getReadableDatabase() {
         return (null != m_dbHelper) ? m_dbHelper.getReadableDatabase() : null;
     }
-    
+
     /**
      * Close the data base if it is opened.
      * 
      * @return true if succeeds, otherwise false.
      */
-    public synchronized boolean closeDB(SQLiteDatabase db)
-    {
-        // Removed by LiHong at 2012/05/29 begin ===========
+    public synchronized boolean closeDB(SQLiteDatabase db) {
         //
         // In the whole life cycle of the application, we do not close the database.
         // When the application closes, we only close the database.
         /**
-        if /null != db && db.isOpen())
-        {
-            db.close();
-        }
-        */
-        // Removed by LiHong at 2012/05/29 end =============
+         * if /null != db && db.isOpen()) { db.close(); }
+         */
 
         return true;
     }
-    
+
     /**
      * Close the cursor, if it is open.
      * 
-     * @param cur           to be closed cursor.
+     * @param cur to be closed cursor.
      */
-    public synchronized void closeCursor(Cursor cur)
-    {
-        if (null != cur && !cur.isClosed())
-        {
+    public synchronized void closeCursor(Cursor cur) {
+        if (null != cur && !cur.isClosed()) {
             cur.close();
         }
     }
-    
+
     /**
      * Execute a specified SQL.
      * 
@@ -94,26 +81,19 @@ public class AbstractDB
      * @param sql       The string of SQL.
      * @param bindArgs  only byte[], String, Long and Double are supported in bindArgs.
      */
-    public synchronized boolean execSQL(SQLiteDatabase db, String sql, Object[] bindArgs)
-    {
-        try
-        {
-            if (null == bindArgs)
-            {
+    public synchronized boolean execSQL(SQLiteDatabase db, String sql, Object[] bindArgs) {
+        try {
+            if (null == bindArgs) {
                 db.execSQL(sql);
-            }
-            else
-            {
+            } else {
                 db.execSQL(sql, bindArgs);
             }
-            
+
             return true;
-        }
-        catch(SQLException e)
-        {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-        
+
         return false;
     }
 }

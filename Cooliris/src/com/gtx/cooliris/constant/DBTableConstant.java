@@ -1,7 +1,7 @@
 package com.gtx.cooliris.constant;
 
-public class DBTableConstant
-{
+public class DBTableConstant {
+    
     // Columns of girls DB's girls table  ------------------------
     public static final String TAB_IMAGEGROUP_ID             = "_id";
     public static final String TAB_IMAGEGROUP_IS_READED      = "is_readed";

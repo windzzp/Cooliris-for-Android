@@ -13,46 +13,39 @@ import com.gtx.cooliris.utils.SettingsPreferenceMgr;
 /**
  * This class extends the Application class.
  */
-public class CoolirisApplication extends Application
-{
-    private class CurrentState
-	{
-		public boolean needShowDescription;
-		public int     slideShowType = 0;
-		
-		public CurrentState(Context context)
-		{
-			SettingsPreferenceMgr prefMgr = new SettingsPreferenceMgr(context);
-			needShowDescription = prefMgr.needShowDescription();
-			slideShowType = prefMgr.getSwitchEffectType();
-		}
-	}
-
-	/**
-     * The application context.
-     */
-    private static Context          s_appContext            = null;
+public class CoolirisApplication extends Application {
     
-    private static CurrentState 	s_currentState			= null;
+    private class CurrentState {
+        public boolean needShowDescription;
+        public int     slideShowType = 0;
+
+        public CurrentState(Context context) {
+            SettingsPreferenceMgr prefMgr = new SettingsPreferenceMgr(context);
+            needShowDescription = prefMgr.needShowDescription();
+            slideShowType = prefMgr.getSwitchEffectType();
+        }
+    }
+
+	/** The application context. */
+    private static Context      s_appContext     = null;
+
+    private static CurrentState s_currentState   = null;
 
     /**
      * The flag indicates whether the data has been initialized or not.
      * After loading global completed, it'll be set into true.
      */
-    private static boolean          s_hasInitialized        = false;
+    private static boolean s_hasInitialized      = false;
 
-    /**
-     * The top activity.
-     */
+    /** The top activity. */
     private Activity m_topActivity = null;
-    
+
     /**
      * Get the application context.
      * 
      * @return The application context.
      */
-    public static Context getAppContext()
-    {
+    public static Context getAppContext() {
         return s_appContext;
     }
     
@@ -60,8 +53,7 @@ public class CoolirisApplication extends Application
      * set the application context.
      * @param context The context of application.
      */
-    private static void setAppContext(Context context)
-    {
+    private static void setAppContext(Context context) {
         s_appContext = context;
     }
 
@@ -73,21 +65,19 @@ public class CoolirisApplication extends Application
      * first activity, service, or receiver in a process.
      * If you override this method, be sure to call super.onCreate().
      */
-    public void onCreate()
-    {
+    public void onCreate() {
         super.onCreate();
-        
+
         initGoogleAnalytics();
-        
+
         // Set the application context.
         setAppContext(this.getApplicationContext());
-        
+
         SettingsPreferenceMgr prefMgr = new SettingsPreferenceMgr(this);
-        if (prefMgr.isFirstRun())
-        {
+        if (prefMgr.isFirstRun()) {
             prefMgr.resetDefault();
         }
-        
+
         s_currentState = new CurrentState(this);
     }
 
@@ -99,36 +89,32 @@ public class CoolirisApplication extends Application
      * code.</em>
      * If you override this method, be sure to call super.onTerminate().
      */
-    public void onTerminate()
-    {
+    public void onTerminate() {
         super.onTerminate();
     }
-     
+
     /**
      * Called when low memory.
      */
-    public void onLowMemory()
-    {
+    public void onLowMemory() {
         super.onLowMemory();
     }
-    
+
     /**
      * Set the top activity activity.
      * 
      * @param topActivity
      */
-    public void setTopActivity(Activity topActivity)
-    {
+    public void setTopActivity(Activity topActivity) {
         m_topActivity = topActivity;
     }
-    
+
     /**
      * Get the top activity.
      * 
      * @return the top activity instance.
      */
-    public Activity getTopActivity()
-    {
+    public Activity getTopActivity() {
         return m_topActivity;
     }
 
@@ -137,8 +123,7 @@ public class CoolirisApplication extends Application
      * 
      * @return True if been initialized, else return false.
      */
-    public static boolean hasInitialized()
-    {
+    public static boolean hasInitialized() {
         return s_hasInitialized;
     }
     
@@ -147,33 +132,27 @@ public class CoolirisApplication extends Application
      * 
      * @param isInitialized The value indicates the data has been initialize or not.
      */
-    public static void setDataInitialized(boolean isInitialized)
-    {
+    public static void setDataInitialized(boolean isInitialized) {
         s_hasInitialized = isInitialized;
     }
-    
-    public static void setNeedShowDescription(boolean needShowDescription)
-    {
-    	s_currentState.needShowDescription = needShowDescription;
+
+    public static void setNeedShowDescription(boolean needShowDescription) {
+        s_currentState.needShowDescription = needShowDescription;
     }
-    
-    public static boolean needShowDescription()
-    {
-    	return s_currentState.needShowDescription;
+
+    public static boolean needShowDescription() {
+        return s_currentState.needShowDescription;
     }
-    
-    public static void setSlideShowType(int type)
-    {
-    	s_currentState.slideShowType = type;
+
+    public static void setSlideShowType(int type) {
+        s_currentState.slideShowType = type;
     }
-    
-    public static int getSlideShowType()
-    {
-    	return s_currentState.slideShowType;
+
+    public static int getSlideShowType() {
+        return s_currentState.slideShowType;
     }
-    
-    protected void initGoogleAnalytics()
-    {        
+
+    protected void initGoogleAnalytics() {
         // Set global context for Google Analytics
         EasyTracker.getInstance().setContext(this);
 
@@ -189,10 +168,9 @@ public class CoolirisApplication extends Application
 //        // Make myHandler the new default uncaught exception handler.
 //        Thread.setDefaultUncaughtExceptionHandler(myHandler);
 //        mGaTracker.setExceptionParser(new AnalyticsExceptionParser());
-        
+
         Thread.UncaughtExceptionHandler uncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-        if (uncaughtExceptionHandler instanceof ExceptionReporter)
-        {
+        if (uncaughtExceptionHandler instanceof ExceptionReporter) {
             ExceptionReporter exceptionReporter = (ExceptionReporter) uncaughtExceptionHandler;
             exceptionReporter.setExceptionParser(new GoogleAnalyticsHelper.AnalyticsExceptionParser());
         }

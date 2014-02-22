@@ -3,118 +3,117 @@ package com.gtx.cooliris.entity;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-public class Image
-{
-    private int     mImageId       	= 0;
-    private int     mParentGroupId 	= 0;
-    private String  mImageUrl      	= "";
-    private String  mThumbUrl 		= "";
-    private boolean mIsFavorite		= false;
+public class Image {
+    private int     mImageId        = 0;
+    private int     mParentGroupId  = 0;
+    private String  mImageUrl       = "";
+    private String  mThumbUrl       = "";
+    private boolean mIsFavorite     = false;
     private WeakReference<ImageGroup> mParent = null;
-    
+
     // TODO: TO be removed
-    private String  mImageDownloadPath  	= "";
-    private String  mImageThumbDownloadPath = "";
-    
-	public Image() {
-	}
+    private String mImageDownloadPath      = "";
+    private String mImageThumbDownloadPath = "";
 
-	public Image(String imageUrl, String thumbUrl) {
-		this(0, imageUrl, thumbUrl);
-	}
+    public Image() {
+    }
 
-	public Image(int imageId, String imageUrl, String thumbUrl) {
-		mImageId = imageId;
-		mImageUrl = imageUrl;
-		mThumbUrl = thumbUrl;
-	}
+    public Image(String imageUrl, String thumbUrl) {
+        this(0, imageUrl, thumbUrl);
+    }
 
-	public ImageGroup getParent() {
-		if (null != mParent) {
-			return mParent.get();
-		}
+    public Image(int imageId, String imageUrl, String thumbUrl) {
+        mImageId = imageId;
+        mImageUrl = imageUrl;
+        mThumbUrl = thumbUrl;
+    }
 
-		return null;
-	}
+    public ImageGroup getParent() {
+        if (null != mParent) {
+            return mParent.get();
+        }
 
-	public void setParent(ImageGroup group) {
-		if (null != group) {
-			mParent = new WeakReference<ImageGroup>(group);
-		}
-	}
+        return null;
+    }
 
-	public int getGroupId() {
-		return mParentGroupId;
-	}
+    public void setParent(ImageGroup group) {
+        if (null != group) {
+            mParent = new WeakReference<ImageGroup>(group);
+        }
+    }
 
-	public void setGroupId(int groupId) {
-		this.mParentGroupId = groupId;
-	}
+    public int getGroupId() {
+        return mParentGroupId;
+    }
 
-	public int getImageId() {
-		return mImageId;
-	}
+    public void setGroupId(int groupId) {
+        this.mParentGroupId = groupId;
+    }
 
-	public void setImageId(int imageId) {
-		this.mImageId = imageId;
-	}
+    public int getImageId() {
+        return mImageId;
+    }
 
-	public String getImageUrl() {
-		return mImageUrl;
-	}
+    public void setImageId(int imageId) {
+        this.mImageId = imageId;
+    }
 
-	public void setImageUrl(String imageUrl) {
-		this.mImageUrl = imageUrl;
-	}
+    public String getImageUrl() {
+        return mImageUrl;
+    }
 
-	public String getThumbUrl() {
-		return mThumbUrl;
-	}
+    public void setImageUrl(String imageUrl) {
+        this.mImageUrl = imageUrl;
+    }
 
-	public void setThumbUrl(String thumbUrl) {
-		this.mThumbUrl = thumbUrl;
-	}
+    public String getThumbUrl() {
+        return mThumbUrl;
+    }
 
-	public boolean isFavorite() {
-		return mIsFavorite;
-	}
+    public void setThumbUrl(String thumbUrl) {
+        this.mThumbUrl = thumbUrl;
+    }
 
-	public void setIsFavorite(boolean isFavorite) {
-		this.mIsFavorite = isFavorite;
+    public boolean isFavorite() {
+        return mIsFavorite;
+    }
 
-		ImageGroup parentGroup = getParent();
-		// Notify parent's favorite state
-		if (!mIsFavorite) {
-			ArrayList<Image> images = parentGroup.getImageList();
-			if (null != images && images.size() > 0) {
-				boolean hasFavImage = false;
-				for (Image image : images) {
-					if (image.isFavorite()) {
-						hasFavImage = true;
-						break;
-					}
-				}
+    public void setIsFavorite(boolean isFavorite) {
+        this.mIsFavorite = isFavorite;
 
-				parentGroup.setHasFavorite(hasFavImage);
-			}
-		} else {
-			parentGroup.setHasFavorite(true);
-		}
-	}
+        ImageGroup parentGroup = getParent();
+        // Notify parent's favorite state
+        if (!mIsFavorite) {
+            ArrayList<Image> images = parentGroup.getImageList();
+            if (null != images && images.size() > 0) {
+                boolean hasFavImage = false;
+                for (Image image : images) {
+                    if (image.isFavorite()) {
+                        hasFavImage = true;
+                        break;
+                    }
+                }
 
-	public String getImageDownloadPath() {
-		return mImageDownloadPath;
-	}
+                parentGroup.setHasFavorite(hasFavImage);
+            }
+        } else {
+            parentGroup.setHasFavorite(true);
+        }
+    }
 
-	public void setImageDownloadPath(String imageDownloadPath) {
-		this.mImageDownloadPath = imageDownloadPath;
-	}
+    public String getImageDownloadPath() {
+        return mImageDownloadPath;
+    }
 
-	public String getImageThumbDownloadPath() {
-		return mImageThumbDownloadPath;
-	}
+    public void setImageDownloadPath(String imageDownloadPath) {
+        this.mImageDownloadPath = imageDownloadPath;
+    }
 
-	public void setImageThumbDownloadPath(String imageThumbDownloadPath) {
-		this.mImageThumbDownloadPath = imageThumbDownloadPath;
-	}
+    public String getImageThumbDownloadPath() {
+        return mImageThumbDownloadPath;
+    }
+
+    public void setImageThumbDownloadPath(String imageThumbDownloadPath) {
+        this.mImageThumbDownloadPath = imageThumbDownloadPath;
+    }
 }

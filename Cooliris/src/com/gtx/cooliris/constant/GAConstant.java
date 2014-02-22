@@ -1,7 +1,7 @@
 package com.gtx.cooliris.constant;
 
-public class GAConstant
-{
+public class GAConstant {
+    
     // Screen (Activity)
     public static final String SCREEN_HOME_IMAGEGROUPS 	= "/Screen/ImageGrid/ImageGroups";
     public static final String SCREEN_HOME_FAVORITE     = "/Screen/ImageGrid/Favorite";
